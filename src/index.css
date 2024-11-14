@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Add base styles for form elements */
+@layer base {
+  input, textarea {
+    @apply border rounded-md px-3 py-2;
+  }
+}
