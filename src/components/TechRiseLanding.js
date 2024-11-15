@@ -1,11 +1,135 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, Code, CircuitBoard, Cpu, ChevronRight, MessageSquare, Users, Award, ArrowRight, Star, Mail, Phone, MapPin } from 'lucide-react';
+import image1 from "./1.jpeg";
+import image2 from "./2.jpeg";
+import image3 from "./3.jpeg";
+import image4 from "./4.jpeg";
+import image5 from "./5.jpeg";
+import image6 from "./6.jpeg";
+
+function App() {
+  const [isFormVisible, setFormVisible] = useState(false);
+
+  const toggleForm = () => {
+    setFormVisible(!isFormVisible);
+  };
+  return (
+    <div>
+      {/* Navigation */}
+      <div className="hidden md:flex items-center space-x-8">
+        <a href="#home" className="text-gray-600 hover:text-indigo-600 transition-colors duration-300">Home</a>
+        <a href="#programs" className="text-gray-600 hover:text-indigo-600 transition-colors duration-300">Programs</a>
+        <a href="#about" className="text-gray-600 hover:text-indigo-600 transition-colors duration-300">About</a>
+        <a href="#gallery" className="text-gray-600 hover:text-indigo-600 transition-colors duration-300">Gallery</a>
+        <a href="#contact" className="text-gray-600 hover:text-indigo-600 transition-colors duration-300">Contact</a>
+        <button
+          className="bg-indigo-600 text-white px-6 py-2 rounded-md hover:bg-indigo-700 transform hover:scale-105 transition-all duration-300"
+          onClick={toggleForm}
+        >
+          Enroll Now
+        </button>
+      </div>
+
+      {/* Form Section */}
+      {isFormVisible && (
+        <div className="mt-8 p-6 border rounded-md shadow-lg max-w-md mx-auto bg-white">
+          <h2 className="text-xl font-bold mb-4">Enrollment Form</h2>
+          <form>
+            <div className="mb-4">
+              <label htmlFor="name" className="block text-gray-700 mb-2">Name</label>
+              <input
+                type="text"
+                id="name"
+                className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-400"
+                placeholder="Enter your name"
+              />
+            </div>
+            <div className="mb-4">
+              <label htmlFor="email" className="block text-gray-700 mb-2">Email</label>
+              <input
+                type="email"
+                id="email"
+                className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-400"
+                placeholder="Enter your email"
+              />
+            </div>
+            <div className="mb-4">
+              <label htmlFor="phone" className="block text-gray-700 mb-2">Phone</label>
+              <input
+                type="text"
+                id="phone"
+                className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-400"
+                placeholder="Enter your phone number"
+              />
+            </div>
+            <button
+              type="submit"
+              className="bg-indigo-600 text-white px-4 py-2 rounded-md hover:bg-indigo-700 transition duration-300"
+            >
+              Submit
+            </button>
+          </form>
+        </div>
+      )}
+    </div>
+  );
+}
+
+
+
+// ImageContainer Component
+const ImageContainer = ({ images }) => {
+  return (
+    <div className="py-12 bg-gray-50" data-animate id="images">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="lg:text-center mb-10">
+          <h2 className="text-base text-indigo-600 font-semibold tracking-wide uppercase">
+            Our Gallery
+          </h2>
+          <p className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+            Inspiring Moments
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {images.map((image, index) => (
+            <div
+              key={index}
+              className="relative overflow-hidden rounded-lg shadow-md hover:scale-105 transition-transform duration-300"
+            >
+              <img
+                src={image.src}
+                alt={image.alt}
+                className="w-full h-56 object-cover"
+              />
+              <div className="absolute inset-0 bg-black bg-opacity-50 opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                <p className="text-white text-lg font-semibold">{image.caption}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+};
+
 
 const TechRiseLanding = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeTestimonial, setActiveTestimonial] = useState(0);
   const [isVisible, setIsVisible] = useState({});
   const [scrollProgress, setScrollProgress] = useState(0);
+
+
+  const images = [
+    { src: image1, alt: "Robotics Workshop", caption: "Robotics Workshop" },
+    { src: image2, alt: "Training Kids", caption: "Training Kids" },
+    { src: image3, alt: "IoT Projects", caption: "IoT Projects" },
+    { src: image4, alt: "Group Activity", caption: "Group Activity" },
+    { src: image5, alt: "Training Kids", caption: "Training Kids" },
+    { src: image6, alt: "Group Photo", caption: "Group Activity" },
+  ];
+  
 
   // Scroll progress bar
   useEffect(() => {
@@ -141,14 +265,19 @@ const TechRiseLanding = () => {
             
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center space-x-8">
-              <a href="#" className="text-gray-600 hover:text-indigo-600 transition-colors duration-300">Home</a>
-              <a href="#" className="text-gray-600 hover:text-indigo-600 transition-colors duration-300">Programs</a>
-              <a href="#" className="text-gray-600 hover:text-indigo-600 transition-colors duration-300">About</a>
-              <a href="#" className="text-gray-600 hover:text-indigo-600 transition-colors duration-300">Contact</a>
-              <button className="bg-indigo-600 text-white px-6 py-2 rounded-md hover:bg-indigo-700 transform hover:scale-105 transition-all duration-300">
-                Enroll Now
-              </button>
-            </div>
+  <a href="#" className="text-gray-600 hover:text-indigo-600 transition-colors duration-300">Home</a>
+  <a href="#programs" className="text-gray-600 hover:text-indigo-600 transition-colors duration-300">Programs</a>
+  <a href="#about" className="text-gray-600 hover:text-indigo-600 transition-colors duration-300">About</a>
+  <a href="#images" className="text-gray-600 hover:text-indigo-600 transition-colors duration-300">Gallery</a>
+  <a href="#contact" className="text-gray-600 hover:text-indigo-600 transition-colors duration-300">Contact</a>
+  <button 
+    className="bg-indigo-600 text-white px-6 py-2 rounded-md hover:bg-indigo-700 transform hover:scale-105 transition-all duration-300"
+    onClick={() => document.getElementById('enroll').scrollIntoView({ behavior: 'smooth' })}
+  >
+    Enroll Now
+  </button>
+</div>
+
 
             {/* Mobile menu button */}
             <div className="md:hidden flex items-center">
@@ -275,6 +404,10 @@ const TechRiseLanding = () => {
           </div>
         </div>
       </div>
+
+ {/* Image Gallery Section */}
+ <ImageContainer images={images} />
+
 
       {/* Testimonials Section */}
       <div className="py-12 bg-white" data-animate id="testimonials">
@@ -419,6 +552,7 @@ const TechRiseLanding = () => {
           </div>
         </div>
       </div>
+
 
       {/* Footer */}
       <footer className="bg-gray-800">
