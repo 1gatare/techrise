@@ -1,15 +1,21 @@
 {
   "files": {
-    "main.css": "/techrise/static/css/main.2456ded5.css",
-    "main.js": "/techrise/static/js/main.298cd83c.js",
+    "main.css": "/techrise/static/css/main.0a44f777.css",
+    "main.js": "/techrise/static/js/main.61eb33f2.js",
     "static/js/453.5566a068.chunk.js": "/techrise/static/js/453.5566a068.chunk.js",
+    "static/media/6.jpeg": "/techrise/static/media/6.855db7d3160abcd03945.jpeg",
+    "static/media/3.jpeg": "/techrise/static/media/3.e70d73e6010b382c295e.jpeg",
+    "static/media/1.jpeg": "/techrise/static/media/1.515a73af9d8b14eef23b.jpeg",
+    "static/media/5.jpeg": "/techrise/static/media/5.6ff57d9e8933c6f4c0f7.jpeg",
+    "static/media/4.jpeg": "/techrise/static/media/4.1da576aa2236721470d8.jpeg",
+    "static/media/2.jpeg": "/techrise/static/media/2.9cd5fdde01ceffc14c4f.jpeg",
     "index.html": "/techrise/index.html",
-    "main.2456ded5.css.map": "/techrise/static/css/main.2456ded5.css.map",
-    "main.298cd83c.js.map": "/techrise/static/js/main.298cd83c.js.map",
+    "main.0a44f777.css.map": "/techrise/static/css/main.0a44f777.css.map",
+    "main.61eb33f2.js.map": "/techrise/static/js/main.61eb33f2.js.map",
     "453.5566a068.chunk.js.map": "/techrise/static/js/453.5566a068.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.2456ded5.css",
-    "static/js/main.298cd83c.js"
+    "static/css/main.0a44f777.css",
+    "static/js/main.61eb33f2.js"
   ]
 }
